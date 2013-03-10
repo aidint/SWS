@@ -1,0 +1,27 @@
+Required modules:
+1- pyodbc:
+download page:
+http://code.google.com/p/pyodbc/downloads/list
+
+2- pypyodbc:
+download page:
+https://code.google.com/p/pypyodbc/downloads/list
+
+
+result must be in this form:
+{ "table_name" : [ [ [ "column_name" , "column_type" ] ]  , [ [ value ] ] ] }
+
+example:
+{"My Table":[[["Name","varchar(255)"],["Age","varchar(255)"]],[["'Ali'","'22'"],["'Hassan'","'23'"]]],
+
+"Your Table":[[["City","varchar(255)"],["Population","int"],["Current Weather","varchar(255)"]],[["'Tehran'","8","'Sunny'"],["'Rasht'","1","'Rainy'"]]]} 
+
+*text values must be in this form: "'value'"
+*number values must be in this form: "value"
+*varchar(t) is a text with maximum size of t
+
+a Sample:
+t = {"My Table":[[["Name","varchar(255)"],["Age","varchar(255)"]],[["'Ali'","'22'"],["'Hassan'","'23'"]]],"City Table":[[["City","varchar(255)"],["Population","int"],["Current Weather","varchar(255)"]],[["'Tehran'","8","'Sunny'"],["'Rasht'","1","'Rainy'"]]]} 
+z = str(random.randint(1,1000))+".mdb"
+print z
+tomdb(t,z)
