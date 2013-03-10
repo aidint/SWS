@@ -25,6 +25,7 @@ import pypyodbc
 import codecs
 from bs4 import BeautifulSoup
 def tomdb(result,dest):
+    dest = dest.replace(" ","_")
     pypyodbc.win_create_mdb(dest)   #creating mdb file 
     MDB = dest; DRV = '{Microsoft Access Driver (*.mdb)}'; PWD = ''     #setting up some requirements
     con = pyodbc.connect('DRIVER={};DBQ={};PWD={}'.format(DRV,MDB,PWD))     #making a connection to mdb
